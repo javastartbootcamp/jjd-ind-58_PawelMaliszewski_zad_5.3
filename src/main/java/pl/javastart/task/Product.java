@@ -6,8 +6,8 @@ public class Product {
     private double nettPrice;
     private String productCategory;
 
-    public Product(String productName, String descripiton, double nettPrice, String productCategory) {
-        this(productName, descripiton, nettPrice);
+    public Product(String productName, String description, double nettPrice, String productCategory) {
+        this(productName, description, nettPrice);
         this.productCategory = productCategory;
     }
 

@@ -1,19 +1,17 @@
 package pl.javastart.task;
 
 public class PriceCalc {
-    private TaxRates taxRates = new TaxRates();
+    private final TaxRates taxRates = new TaxRates();
 
     public double returnGrossPrice(Product product) {
         if (product.getProductCategory() == null) {
-            double grossPrice = taxRates.grossPriceCalcTax3(product);
-            return grossPrice;
+            return taxRates.grossPriceCalcTax3(product);
         } else {
-            double grossPrice = switch (product.getProductCategory()) {
-                case "Nabiał" -> taxRates.grossPriceCalcTax1(product);
-                case "Słodycze" -> taxRates.grossPriceCalcTax2(product);
+            return switch (product.getProductCategory()) {
+                case Category.SWEETS -> taxRates.grossPriceCalcTax1(product);
+                case Category.DAIRY -> taxRates.grossPriceCalcTax2(product);
                 default -> taxRates.grossPriceCalcTax3(product);
             };
-            return grossPrice;
         }
     }
 }

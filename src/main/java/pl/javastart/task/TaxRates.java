@@ -1,19 +1,19 @@
 package pl.javastart.task;
 
 public class TaxRates {
-    private double taxRate1 = 0.08;
-    private double taxRate2 = 0.16;
-    private double taxRate3 = 0.23;
+    private static final double TAX_RATE1 = 0.08;
+    private static final double TAX_RATE2 = 0.16;
+    private static final double TAX_RATE3 = 0.23;
 
     double grossPriceCalcTax1(Product product) {
-        return product.getNettPrice() + product.getNettPrice() * taxRate1;
+        return product.getNettPrice() + product.getNettPrice() * TAX_RATE1;
     }
 
     double grossPriceCalcTax2(Product product) {
-        return product.getNettPrice() + product.getNettPrice() * taxRate2;
+        return product.getNettPrice() + product.getNettPrice() * TAX_RATE2;
     }
 
     double grossPriceCalcTax3(Product product) {
-        return product.getNettPrice() + product.getNettPrice() * taxRate3;
+        return product.getNettPrice() + product.getNettPrice() * TAX_RATE3;
     }
 }
