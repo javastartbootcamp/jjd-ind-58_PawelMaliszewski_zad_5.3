@@ -1,17 +1,22 @@
 package pl.javastart.task;
 
 public class PriceCalc {
-    private final TaxRates taxRates = new TaxRates();
+
+    private static final double TAX_RATE_SWEETS = 0.08;
+    private static final double TAX_RATE_DAIRY = 0.16;
+    private static final double TAX_RATE_UNIVERSAL = 0.23;
 
     public double returnGrossPrice(Product product) {
-        if (product.getProductCategory() == null) {
-            return taxRates.grossPriceCalcTax3(product);
+        double taxRate;
+        if (product.getCategory() == null) {
+            return product.getNettPrice() + product.getNettPrice() * TAX_RATE_UNIVERSAL;
         } else {
-            return switch (product.getProductCategory()) {
-                case Category.SWEETS -> taxRates.grossPriceCalcTax1(product);
-                case Category.DAIRY -> taxRates.grossPriceCalcTax2(product);
-                default -> taxRates.grossPriceCalcTax3(product);
+            taxRate =  switch (product.getCategory()) {
+                case Category.SWEETS ->  TAX_RATE_SWEETS;
+                case Category.DAIRY ->  TAX_RATE_DAIRY;
+                default ->  TAX_RATE_UNIVERSAL;
             };
         }
+        return product.getNettPrice() + product.getNettPrice() * taxRate;
     }
 }
