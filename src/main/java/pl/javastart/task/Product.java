@@ -1,28 +1,28 @@
 package pl.javastart.task;
 
 public class Product {
-    private String productName;
+    private String name;
     private String description;
     private double nettPrice;
-    private String productCategory;
+    private String category;
 
-    public Product(String productName, String description, double nettPrice, String productCategory) {
-        this(productName, description, nettPrice);
-        this.productCategory = productCategory;
+    public Product(String name, String description, double nettPrice, String category) {
+        this(name, description, nettPrice);
+        this.category = category;
     }
 
-    public Product(String productName, String descripiton, double nettPrice) {
-        this.productName = productName;
+    public Product(String name, String descripiton, double nettPrice) {
+        this.name = name;
         this.description = descripiton;
         this.nettPrice = nettPrice;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescripiton() {
@@ -41,11 +41,11 @@ public class Product {
         this.nettPrice = nettPrice;
     }
 
-    public String getProductCategory() {
-        return productCategory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setProductCategory(String productCategory) {
-        this.productCategory = productCategory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

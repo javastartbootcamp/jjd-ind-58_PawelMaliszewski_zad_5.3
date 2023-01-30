@@ -13,6 +13,5 @@ public class Main {
         System.out.println(priceCalc.returnGrossPrice(product1));
         System.out.println(priceCalc.returnGrossPrice(product2));
         System.out.println(priceCalc.returnGrossPrice(product3));
-
     }
 }
